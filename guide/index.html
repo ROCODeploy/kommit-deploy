@@ -32,7 +32,7 @@
 
 <h1 id="how-it-works">How it works</h1>
 <p>Kommit helps you remember what you learn via flashcards and <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>.</p>
-<p>When one side is presented, you try to recall the other before flipping it over – this <a href="https://en.wikipedia.org/wiki/Active_recall">actively recall</a> strengthens your memory more than multiple-choice questions.</p>
+<p>When one side is presented, you try to recall the other before flipping it over – this <a href="https://en.wikipedia.org/wiki/Active_recall">active recall</a> strengthens your memory more than multiple-choice questions.</p>
 <p>The cards are presented when you are likely to forget, which <a href="https://elearninginfographics.com/memory-retention-and-the-forgetting-curve-infographic/">aids memory retention</a> and also reduces the amount of time you need to study. This method can make remembering a choice rather than leaving it up to chance.</p>
 <p>It&#39;s great for languages, but can also be applied to other domains.</p>
 <h1 id="list-of-decks">List of decks</h1>
@@ -69,7 +69,6 @@
 <h2 id="tips">Tips</h2>
 <p>Evaluate yourself based on personal goals. Are you practicing speed? a certain way of responding? a physical sensation? If you are studying languages, are you working on pronounciation? understanding? spelling? grammar?</p>
 <p>If your device has a physical keyboard, streamline your responses with <a href="/guide#shortcuts">shortcuts</a>.</p>
-<p>Don&#39;t be afraid of the <em>This session</em> button, it basically strengthens your memory.</p>
 <p>You can try <a href="https://en.wikipedia.org/wiki/Moonwalking_with_Einstein">mneumonics and other memory tricks</a> to help remember – usually the more personal it is, the better.</p>
 <h1 id="card-browser">Card browser</h1>
 <p>On the left side of the interface, you can create, search, and select cards. On the right side, you can edit the details.</p>
@@ -83,6 +82,57 @@
 <p>The <em>Read</em> button speaks the text using the language chosen on the deck page.</p>
 <p><em>Notes</em> can be used for any personal comments or memory aids.</p>
 <p><em>Tags</em> can be used to organize cards and make them easier to find.</p>
+<h1 id="statistics">Statistics</h1>
+<p>Various figures are calculated based on the state of each card and the amount of time spent.</p>
+<p>On the deck page, calculations are based on the selected deck. On the List of decks, calculations are based on all decks combined.</p>
+<p>Cards are visually encoded based on the following states:</p>
+<table class="KOMGuideStatisticsLegend">
+
+<tr>
+    <td><span style="background: #252525;"></span></td>
+    <td>Unseen</td>
+    <td>without any reviews, not scheduled</td>
+</tr>
+
+<tr>
+    <td><span style="background: #636363;"></span></td>
+    <td>Relearning</td>
+    <td>the *This session* button was pressed</td>
+</tr>
+
+<tr>
+    <td><span style="background: #969696;"></span></td>
+    <td>Developing</td>
+    <td>scheduled to appear within 21 days</td>
+</tr>
+
+<tr>
+    <td><span style="background: #cccccc;"></span></td>
+    <td>Mature</td>
+    <td>scheduled to appear after 21 days</td>
+</tr>
+
+<tr>
+    <td><span style="background: #f7f7f7;"></span></td>
+    <td>Suspended</td>
+    <td>the card was removed from the schedule</td>
+</tr>
+
+</table>
+
+<h2 id="today">Today</h2>
+<p>All statistics in this section are for the current day.</p>
+<ul>
+<li><em>Total cards</em>: number of cards reviewed.</li>
+<li><em>Time</em>: minutes passed during the memory game.</li>
+<li><em>Review accuracy</em>: percentage of review cards remembered correctly; new cards are not counted.</li>
+</ul>
+<h2 id="upcoming-cards">Upcoming cards</h2>
+<p>The number of <em>Developing</em> and <em>Mature</em> cards scheduled on a given day.</p>
+<h2 id="time">Time</h2>
+<p>Minutes passed on a given day during the memory game on Unseen, Relearning, Developing, and Mature cards.</p>
+<h2 id="collection">Collection</h2>
+<p>Counting the number of cards based on its state.</p>
 <h1 id="shortcuts">Shortcuts</h1>
 <div class="KOMGuideNotice">
 
@@ -102,7 +152,15 @@
 <td><code>AccessKey</code> + <code>n</code></td>
 </tr>
 <tr>
-<td align="left">Select deck existing deck</td>
+<td align="left"><code>Select deck '…'</code></td>
+<td>Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>Send login link</code></td>
+<td>Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>Flush data</code></td>
 <td>Launcher</td>
 </tr>
 </tbody></table>
@@ -124,6 +182,14 @@
 <tr>
 <td align="left">Close</td>
 <td><code>Escape</code></td>
+</tr>
+<tr>
+<td align="left"><code>Study review cards</code></td>
+<td>Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>Study new cards</code></td>
+<td>Launcher</td>
 </tr>
 </tbody></table>
 <table>
@@ -185,6 +251,10 @@
 <td align="left">Close, if filter field is focused</td>
 <td><code>Escape</code></td>
 </tr>
+<tr>
+<td align="left"><code>Debug Card</code></td>
+<td>Launcher</td>
+</tr>
 </tbody></table>
 <table>
 <thead>
@@ -198,7 +268,7 @@
 <td><code>Alt-Enter</code></td>
 </tr>
 </tbody></table>
-<h1 id="what-is-remotestorage">What is &#39;remoteStorage&#39;?</h1>
+<h1 id="what-is-remotestorage">What is remoteStorage?</h1>
 <p><a href="https://remotestorage.io">remoteStorage</a> is an incredible open-source technology for synchronizing data between multiple devices and making it available offline.</p>
 <p>It allows the same data to be used in different ways by multiple apps. You could think of it as a USB key for your documents that you can plug into websites to work on your stuff.</p>
 <p>You can get one for free from <a href="https://5apps.com/storage/">5apps</a> or <a href="https://wiki.remotestorage.io/Servers">host your own</a>.</p>
