@@ -1,4 +1,4 @@
-const cacheName = 'OLSKServiceWorkerCache-1596819860001';
+const cacheName = 'OLSKServiceWorkerCache-1597066214756';
 
 		self.addEventListener('activate', function (event) {
 			console.log('activate', event);
