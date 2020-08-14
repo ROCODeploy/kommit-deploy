@@ -29,7 +29,7 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 
 			// DATA
 
-			_DataCacheName: 'OLSKServiceWorkerCache-1597437707599',
+			_DataCacheName: 'OLSKServiceWorkerCache-1597437958635',
 			_DataOriginPage: '/review',
 
 			// CONTROL
@@ -57,9 +57,9 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 					return;
 				}
 
-				// if (event.request.mode === 'cors') {
-				// 	return console.log('ignoring cors', event.request);
-				// }
+				if (event.request.mode === 'cors') {
+					return;
+				}
 
 				if (event.request.mode === 'navigate' && !event.request.url.includes(mod._DataOriginPage)) {
 					return;
