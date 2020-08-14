@@ -29,7 +29,7 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 
 			// DATA
 
-			_DataCacheName: 'OLSKServiceWorkerCache-1597437491255',
+			_DataCacheName: 'OLSKServiceWorkerCache-1597437707599',
 			_DataOriginPage: '/review',
 
 			// CONTROL
