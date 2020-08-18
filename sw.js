@@ -29,7 +29,7 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 
 			// DATA
 
-			_DataVersionCacheName: 'OLSKServiceWorkerVersionCache-1597765967602',
+			_DataVersionCacheName: 'OLSKServiceWorkerVersionCache-1597788240589',
 			_DataPersistenceCacheName: 'OLSKServiceWorkerPersistenceCache',
 			_DataOriginPage: '/review',
 
@@ -95,7 +95,11 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 
 			OLSKServiceWorkerDidReceiveMessage (event) {
 				if (event.data.action === 'skipWaiting') {
-				  mod._ValueSelf.skipWaiting();
+				  return mod._ValueSelf.skipWaiting();
+				}
+
+				if (event.data === 'OLSKServiceWorkerClearVersionCacheMessage') {
+				  return mod.ControlClearCache();
 				}
 			},
 		
