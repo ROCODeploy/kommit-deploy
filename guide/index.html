@@ -42,6 +42,7 @@
 <p><em>Play audio</em> will automatically play any recorded audio for the card.</p>
 <p><em>Read front</em> or <em>Read back</em> will speak the text using any language available on your device. By default it uses the language of your computer, but you can set a <a href="https://www.w3schools.com/tags/ref_language_codes.asp">language code</a> if your cards use multiple languages. If <em>Play audio</em> is enabled and there is recorded audio for the same side, only the audio will play.</p>
 <p>By default, the cards will be presented both front-to-back and back-to-front, but <em>Skip reversed cards</em> will disable the latter.</p>
+<p><em>Retire cards</em> will automatically remove cards from the schedule after the &#39;interval&#39; is bigger than the selected period. For example, selecting <em>after three months</em> will retire a card if the next review is more than three months away.</p>
 <h1 id="memory-game">Memory game</h1>
 <p>During a review, the cards will be presented in a random order. Try to recall the opposite side without looking, then <em>Flip</em> the card to reveal the following response buttons to schedule the card&#39;s next appearance:</p>
 <ul>
@@ -124,23 +125,23 @@
 <tr>
     <td><span style="background: #f7f7f7;"></span></td>
     <td>Retired</td>
-    <td>the card was removed from the schedule</td>
+    <td>removed from the schedule</td>
 </tr>
 
 </table>
 
-<h2 id="today">Today</h2>
+<h2 id="komreviewgeneraltodaytext">Today</h2>
 <p>All statistics in this section are for the current day.</p>
 <ul>
 <li><em>Total cards</em>: number of cards reviewed.</li>
 <li><em>Time</em>: minutes passed during the memory game.</li>
 <li><em>Review accuracy</em>: percentage of review cards remembered correctly; new cards are not counted.</li>
 </ul>
-<h2 id="upcoming-cards">Upcoming cards</h2>
+<h2 id="komreviewgeneralupcomingheadingtext">Upcoming cards</h2>
 <p>The number of <em>Developing</em> and <em>Mature</em> cards scheduled on a given day.</p>
 <h2 id="time">Time</h2>
-<p>Minutes passed on a given day during the memory game on Unseen, Relearning, Developing, and Mature cards.</p>
-<h2 id="collection">Collection</h2>
+<p>Minutes passed on a given day during the memory game on <em>Unseen</em>, <em>Relearning</em>, <em>Developing</em>, and <em>Mature</em> cards.</p>
+<h2 id="komreviewgeneralcollectionheadingtext">Collection</h2>
 <p>Counting the number of cards based on its state.</p>
 <h1 id="shortcuts">Shortcuts</h1>
 <div class="KOMGuideNotice">
@@ -157,7 +158,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Create new deck</td>
+<td align="left">Create deck</td>
 <td><code>AccessKey+n</code></td>
 </tr>
 <tr>
@@ -301,6 +302,21 @@
 <td><code>Alt+Enter</code></td>
 </tr>
 </tbody></table>
+<h1 id="add-to-home-screen-on-mobile-and-tablet-devices">Add to Home screen on mobile and tablet devices</h1>
+<p>This web app can be &#39;installed&#39; and used as if it were a native mobile app (with an icon, working without internet access, running as a standalone app outside of the browser).</p>
+<ol>
+<li><a href="/en/review">Open the app</a> in your browser, then follow the steps based on your operating system:</li>
+</ol>
+<h2 id="ios--safari">iOS + Safari</h2>
+<ol start="2">
+<li>Tap the Share button <img height="22" valign="middle" alt="Share button icon" src="/_shared/__external/OLSKUIAssets/_OLSKSharediOSShare.svg" /></li>
+<li>Tap <em>Add to Home Screen</em> <img height="22" valign="middle" alt="Add to Home Screen icon" src="/_shared/__external/OLSKUIAssets/_OLSKSharediOSA2HS.svg"></li>
+</ol>
+<h2 id="android--chrome">Android + Chrome</h2>
+<ol start="2">
+<li>Tap the More button <img height="22" valign="middle" alt="More button icon" src="/_shared/__external/OLSKUIAssets/_OLSKSharedAndroidMore.svg" /></li>
+<li>Tap <em>Add to home screen</em></li>
+</ol>
 <h1 id="what-is-remotestorage">What is remoteStorage?</h1>
 <p><a href="https://remotestorage.io">remoteStorage</a> is an incredible open-source technology for synchronizing data between multiple devices and making it available offline.</p>
 <p>It allows the same data to be used in different ways by multiple apps. You could think of it as a USB key for your documents that you can plug into websites to work on your stuff.</p>
