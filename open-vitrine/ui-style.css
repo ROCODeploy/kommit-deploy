@@ -1,45 +1,19 @@
-.ZDAVitrinePrinciplesList {
-	padding-left: 0 !important;
-	text-indent: 0;
-	list-style: none;
+:root {
+	--OLSKCommonBackground: var(--KOMCommonBackground);
+	--OLSKCommonForeground: var(--KOMCommonForeground);
+	--OLSKCommonFontSize: 11pt;
 }
 
-.ZDAVitrinePrinciplesListItem {
-	padding: 10px;
-	border-radius: 5px;
-
-	margin: 10px 0;
-
-	background: #eee;
+body {
+	background: var(--KOMCommonBackground);
+	color: var(--KOMCommonForeground);
 }
 
-.ZDAVitrinePrinciplesListItem em {
-	font-weight: bold;
-	font-style: normal;
+.KOMVitrineVideo {
+	margin: 20px auto;
+	text-align: center;
 }
 
-.ZDAVitrineListItem {
-	padding: 10px;
-
-	margin: 10px 0;
-}
-
-.ZDAVitrineListItem a {
-	text-decoration: none;
-	color: black;
-}
-
-.ZDAVitrineListItemIcon {
-	border-radius: 5px;
-	overflow: hidden;
-
-	flex-shrink: 0;
-}
-
-.ZDAVitrineListItemName {
-	font-size: 20pt;
-}
-
-.ZDAVitrineListItemBlurb {
-	font-size: 11pt;
+.KOMVitrineVideoFrame {
+	border: 6px #ccc solid;
 }

@@ -3,7 +3,5 @@ Allow: /$
 Allow: /en/
 Allow: /fr/
 Allow: /es/
-Allow: /pt/
-Allow: /projects.json
-Allow: /application_icon_*
+Allow: /guide
 Disallow: /
