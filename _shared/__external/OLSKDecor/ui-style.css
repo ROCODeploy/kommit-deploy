@@ -1,11 +1,12 @@
 :root {
 	--OLSKCommonContainerPadding: 10px;
-	--OLSKCommonContainerMaxWidth: 400px;
+	--OLSKCommonContainerMaxWidth: 420px;
 
 	--OLSKCommonFontFamily: 'Lucida Grande', sans-serif;
 	--OLSKCommonFontSize: 10.5pt;
 
 	--OLSKCommonHeadingFontFamily: 'Helvetica Neue';
+	--OLSKCommonQuoteFontFamily: 'Georgia', serif;
 
 	--OLSKCommonBackground: white;
 	--OLSKCommonForeground: black;
@@ -19,6 +20,18 @@
 	--OLSKCommonInteractiveFill: hsl(0, 0%, 90%);
 
 	--OLSKCommonInputPadding: 5px;
+
+	--OLSKSharedPadding: 4px;
+	--OLSKBorderRadius: 5px;
+
+	--OLSKSectionSpacing: 2em;
+
+	--OLSKMasterListItemSelectedColorDefault: #e6e6e6;
+	--OLSKMasterListItemSelectedColorActive: #1a81ff;
+	--OLSKMasterListItemSelectedColorActiveInverse: white;
+
+	--OLSKAlertColor: #eeeeee;
+	--OLSKCodeColor: hsl(0, 0%, 20%);
 }
 
 /* OLSKCommonEdge */
@@ -32,7 +45,7 @@
 }
 
 .OLSKCommonEdgeBottom {
-	border-bottom: var(--OLSKCommonEdgeBorder);
+	border-bottom: var(--OLSKCommonEdgeBorder) !important;
 }
 
 /* OLSKViewport */
@@ -131,12 +144,14 @@
 /* OLSKToolbar */
 
 .OLSKToolbar {
-	--OLSKToolbarSize: 20px;
-	--OLSKToolbarBackground: #fff;
+	--OLSKToolbarButtonSize: 20px;
+	--OLSKToolbarMinHeight: 32px;
+	--OLSKToolbarElementSpacing: 2px;
 
-	padding: 0 4px;
+	min-height: var(--OLSKToolbarMinHeight);
+	padding: var(--OLSKSharedPadding);
 
-	background: var(--OLSKToolbarBackground);
+	background: var(--OLSKCommonBackground);
 
 	/* Firefox header spacing */
 	line-height: 0;
@@ -149,9 +164,8 @@
 @media screen and (max-width: 760px) {
 
 .OLSKToolbar {
-	--OLSKToolbarSize: 24px;
-
-	min-height: 52px;
+	--OLSKToolbarButtonSize: 24px;
+	--OLSKToolbarMinHeight: 44px;
 }
 
 }
@@ -178,17 +192,17 @@
 /* OLSKToolbarElementGroup */
 
 .OLSKToolbarElementGroup {
-	margin: 10px 2px;
+	margin: 0 var(--OLSKToolbarElementSpacing);
 }
 
 .OLSKToolbarElementGroup button {
-	margin: 0 2px;
+	margin: 0 var(--OLSKToolbarElementSpacing);
 }
 
 @media screen and (max-width: 760px) {
 
 .OLSKToolbarElementGroup button {
-	margin: 0 8px;
+	--OLSKToolbarElementSpacing: 8px;
 }
 
 }
@@ -197,8 +211,8 @@
 
 .OLSKToolbarButton {
 	display: inline-block;
-	width: var(--OLSKToolbarSize);
-	height: var(--OLSKToolbarSize);
+	width: var(--OLSKToolbarButtonSize);
+	height: var(--OLSKToolbarButtonSize);
 }
 
 .OLSKToolbarButton > *, .OLSKToolbarButton svg {
@@ -210,7 +224,7 @@
 	opacity: 0.3;
 }
 
-.OLSKLayoutElementTappable {
+.OLSKDecorTappable {
 	cursor: pointer;
 
 	/* DisableTextSelection */
@@ -222,7 +236,7 @@
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.OLSKLayoutElementTextVisual {
+.OLSKDecorTextVisual {
 	cursor: default;
 
 	/* DisableTextSelection */
@@ -234,7 +248,7 @@
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.OLSKLayoutButtonNoStyle {
+.OLSKDecorButtonNoStyle {
 	background: none;
 	border: none;
 	padding: 0;
@@ -275,14 +289,14 @@
 }
 
 .OLSKMasterListBody .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: #e6e6e6;
+	background: var(--OLSKMasterListItemSelectedColorDefault);
 }
 
 @media screen and (min-width: 760px) {
 
 .OLSKMasterListFocused .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: #1a81ff;
-	color: white;
+	background: var(--OLSKMasterListItemSelectedColorActive);
+	color: var(--OLSKMasterListItemSelectedColorActiveInverse);
 }
 
 }
@@ -330,8 +344,8 @@
 }
 
 .OLSKStorageToolbar .OSWStorageOptions svg {
-	width: var(--OLSKToolbarSize);
-	height: var(--OLSKToolbarSize);
+	width: var(--OLSKToolbarButtonSize);
+	height: var(--OLSKToolbarButtonSize);
 }
 
 .OLSKStorageToolbar .OSWOptionRemoteStorage {
@@ -346,7 +360,7 @@
 .OLSKStorageToolbar .OSWOptionRemoteStorage form .OSWOptionRemoteStorageAddressField {
 	padding: var(--OLSKCommonInputPadding);
 	border: var(--OLSKCommonBorder);
-	border-radius: var(--OLSKCommonInputPadding);
+	border-radius: var(--OLSKBorderRadius);
 
 	flex-grow: 1;
 }
@@ -354,7 +368,7 @@
 .OLSKStorageToolbar .OSWOptionRemoteStorage form .OSWOptionRemoteStorageConnectButton {
 	padding: var(--OLSKCommonInputPadding);
 	border: var(--OLSKCommonBorder);
-	border-radius: var(--OLSKCommonInputPadding);
+	border-radius: var(--OLSKBorderRadius);
 
 	margin-right: 0;
 
@@ -393,9 +407,9 @@
 	font-weight: bold;
 }
 
-/* OLSKCommon */
+/* OLSKDecor */
 
-.OLSKCommon {
+.OLSKDecor {
 	padding: var(--OLSKCommonContainerPadding);
 
 	background: var(--OLSKCommonBackground);
@@ -404,101 +418,136 @@
 	color: var(--OLSKCommonForeground);
 }
 
-.OLSKCommonCapped {
+.OLSKDecorCapped {
 	max-width: var(--OLSKCommonContainerMaxWidth);
 
 	margin: auto;
 }
 
-.OLSKCommonBordered {
-	padding: 20px 20px;
+.OLSKDecorOutline {
+	--OLSKCommonContainerPadding: 20px;
+
 	border: var(--OLSKCommonBorder);
 	border-top: none;
 	border-bottom: none;
 }
 
 @media (max-width: 450px) {
-	.OLSKCommonBordered {
+	.OLSKDecorOutline {
 		border: none;
 	}
 }
 
-.OLSKCommon h1, .OLSKCommon h2, .OLSKCommon h3, .OLSKCommon h4 {
+.OLSKDecor h1, .OLSKDecor h2, .OLSKDecor h3, .OLSKDecor h4 {
 	font-family: var(--OLSKCommonHeadingFontFamily);
 }
 
-.OLSKCommon h1 {
-	padding-bottom: 2px;
-	border-bottom: 1px solid var(--OLSKCommonForeground);
+.OLSKDecor h1 {
+	padding-bottom: var(--OLSKSharedPadding);
+	border-bottom: var(--OLSKCommonEdgeBorder);
 
-	font-size: 18pt;
+	margin-top: var(--OLSKSectionSpacing);
+
+	font-size: calc(var(--OLSKCommonFontSize) * 1.8);
 }
 
-.OLSKCommon h2 {
-	font-size: 12pt;
+.OLSKDecor h2 {
+	font-size: calc(var(--OLSKCommonFontSize) * 1.3);
 }
 
-.OLSKCommon ul {
+.OLSKDecor ul, .OLSKDecor ol {
 	padding-left: 30px;
 }
 
-.OLSKCommon hr {
+.OLSKDecor blockquote {
+	margin-left: 0;
+	padding-left: var(--OLSKCommonContainerPadding);
+	border-left: var(--OLSKCommonBorder);
+
+	font-style: oblique;
+	font-family: var(--OLSKCommonQuoteFontFamily);
+	font-size: calc(var(--OLSKCommonFontSize) * 0.9);
+}
+
+.OLSKDecor hr {
 	height: 1px;
 	border: none;
 
 	background: var(--OLSKCommonForeground);
 }
 
-.OLSKCommon input, .OLSKCommon button, .OLSKCommonButton {	
+.OLSKDecor table {
+	width: 100%;
+	border-collapse: collapse;
+
+	margin: calc(var(--OLSKSectionSpacing) / 2) 0;
+}
+
+.OLSKDecor table tr td {
+	padding: var(--OLSKSharedPadding);
+	border-top: var(--OLSKCommonEdgeBorder);
+}
+
+.OLSKDecor input, .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"], .OLSKDecor textarea {	
 	display: inline-block;
 	padding: var(--OLSKCommonInputPadding);
 	border: var(--OLSKCommonBorder);
-	border-radius: var(--OLSKCommonInputPadding);
+	border-radius: var(--OLSKBorderRadius);
 }
 
-.OLSKCommon button, .OLSKCommonButton, .OLSKCommon input[type="submit"] {
+.OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"] {
 	background: var(--OLSKCommonInteractiveFill);
 }
 
-a.OLSKCommonButton {
+a.OLSKDecorPress {
 	color: var(--OLSKCommonForeground);
 	text-decoration: none;
 }
 
-.OLSKCommonButtonPrimary {
-	padding: 8px 16px;
-	font-size: 110%;
+.OLSKDecorPressCall {
+	padding: calc(var(--OLSKSharedPadding) * 2.5) calc(var(--OLSKSharedPadding) * 4);
+	font-size: calc(var(--OLSKCommonFontSize) * 1.1);
 }
 
-.OLSKCommonButtonDestructive {
+.OLSKDecorPressDestroy {
 	border-color: #800002;
-	background: #ffefef;
+	background: #ffefef !important;
 	color: #800002;
 }
 
-.OLSKCommonAlert {
-	padding: 10px;
-
-	background: #eeeeee;
-}
-
-/*@media (max-width: 760px) {
-
-.OLSKCommon button, .OLSKCommonButton, .OLSKCommon input[type="submit"] {
-	display: block;
-	
-	margin-top: 20px;
-}
-
-}*/
-
-.OLSKCommon code {
+.OLSKDecor code {
 	display: inline-block;
-	padding: 3px;
+	padding: var(--OLSKSharedPadding);
+	border-radius: var(--OLSKBorderRadius);
 
-	background: hsl(0, 0%, 94%);
-	color: hsl(0, 0%, 20%);
+	background: var(--OLSKAlertColor);
+	color: var(--OLSKCodeColor);
 }
+
+/* OLSKDecorNotice */
+
+.OLSKDecorNotice {
+	padding: var(--OLSKCommonContainerPadding);
+	border: 1px solid var(--OLSKCommonForeground);
+
+	margin: calc(var(--OLSKCommonContainerPadding) * 2) 0;
+}
+
+.OLSKDecorNotice p:first-child {
+	margin-top: 0;
+}
+
+.OLSKDecorNotice p:last-child {
+	margin-bottom: 0;
+}
+
+.OLSKCommonAlert {
+	padding: var(--OLSKCommonContainerPadding);
+
+	background: var(--OLSKAlertColor);
+}
+
+/* OLSKCommonRootLink */
 
 .OLSKCommonRootLink {
 	width: 70px;
@@ -518,30 +567,30 @@ a.OLSKCommonButton {
 	align-items: center;
 }
 
-.OLSKCommonCard > img {
+.OLSKCommonCard > img, .OLSKCommonCard > a img {
 	--OLSKCommonCardImageSize: 70px;
 
 	width: var(--OLSKCommonCardImageSize);
 	min-width: var(--OLSKCommonCardImageSize);
 
-	margin-right: 8px;
+	margin-right: calc(var(--OLSKSharedPadding) * 2);
 }
 
 .OLSKCommonCard > :last-child > :nth-child(1) {
 	display: block;
 	
 	font-weight: bold;
+	font-family: var(--OLSKCommonHeadingFontFamily);
 }
 
 /* OLSKCommonCrownCard */
 
 .OLSKCommonCrownCard {
-	margin: 2em 0;
+	margin: var(--OLSKSectionSpacing) 0;
 }
 
 .OLSKCommonCrownCard > :last-child > :nth-child(1) {
-	font-family: var(--OLSKCommonHeadingFontFamily);
-	font-size: 24pt;
+	font-size: calc(var(--OLSKCommonFontSize) * 2.5);
 }
 
 .OLSKCommonCrownCard > :last-child > :nth-child(2) {
@@ -551,7 +600,7 @@ a.OLSKCommonButton {
 /* OLSKCommonFeatureCard */
 
 .OLSKCommonFeatureCard {
-	margin: 1em 0;
+	margin: calc(var(--OLSKSectionSpacing) / 2) 0;
 }
 
 .OLSKCommonFeatureCard > img {
@@ -560,6 +609,20 @@ a.OLSKCommonButton {
 
 .OLSKCommonFeatureCard > :last-child > :nth-child(1) {
 	font-family: unset;
+}
+
+/* OLSKTestimonialListItem */
+
+.OLSKTestimonialListItem {
+	padding: var(--OLSKCommonContainerPadding);
+
+	margin: calc(var(--OLSKSectionSpacing) / 2) 0;
+
+	background: var(--OLSKCommonInteractiveFill);
+}
+
+.OLSKTestimonialListItemAuthor {
+	font-size: calc(var(--OLSKCommonFontSize) * 0.8);
 }
 
 /* OLSKCommonWhatIsIt */
@@ -572,8 +635,6 @@ a.OLSKCommonButton {
 
 .OLSKCommonVideoList {
 	max-width: 350px;
-
-	margin: auto;
 }
 
 .OLSKCommonVideoListItem {
@@ -583,7 +644,7 @@ a.OLSKCommonButton {
 	
 	padding-top: calc(((var(--OLSKCommonVideoHigh) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth)) / (var(--OLSKCommonVideoWide) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth))) * 100.00%);
 	border: calc(var(--OLSKCommonVideoBorderWidth) * 1px) var(--OLSKCommonInteractiveFill) solid;
-	border-radius: 10px;
+	border-radius: var(--OLSKBorderRadius);
 
   position: relative;
 
@@ -598,4 +659,55 @@ a.OLSKCommonButton {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* OLSKDecorBigForm */
+
+.OLSKDecorBigForm p:nth-child(1) {
+	margin-top: 0;
+}
+
+.OLSKDecorBigForm input[type=text], .OLSKDecorBigForm textarea {
+	width: 90%;
+	padding: calc(var(--OLSKSharedPadding) * 2);
+	border: var(--OLSKCommonEdgeBorder);
+}
+
+/*.OLSKCommonForm input[type=text] {
+	line-height: 1.7;
+}*/
+
+.OLSKDecorBigForm textarea {
+	min-height: 200px;
+}
+
+.OLSKDecorBigForm hr {
+	margin: 0;
+	width: 90%;
+	background: var(--OLSKCommonEdgeColor);
+}
+
+/* OLSKDecorX */
+
+.OLSKDecorX a:not([href*="http"]):before {
+  content: "[[";
+  
+  opacity: 0.5;
+}
+
+.OLSKDecorX a:not([href*="http"]):after {
+  content: "]]";
+  
+  opacity: 0.5;
+}
+
+.OLSKDecorX a[href*="http"]:after {
+  content: "◱";
+
+  display: inline-block;
+
+  margin-left: 3px;
+
+  opacity: 0.5;
+  text-decoration: none;
 }
