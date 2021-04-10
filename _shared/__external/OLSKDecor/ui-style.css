@@ -26,12 +26,16 @@
 
 	--OLSKSectionSpacing: 2em;
 
-	--OLSKMasterListItemSelectedColorDefault: #e6e6e6;
-	--OLSKMasterListItemSelectedColorActive: #1a81ff;
-	--OLSKMasterListItemSelectedColorActiveInverse: white;
+	--OLSKCollectionItemsLocusColorDefault: #e6e6e6;
+	--OLSKCollectionItemsLocusColorActive: #1a81ff;
+	--OLSKCollectionItemsLocusColorActiveInverse: white;
 
 	--OLSKAlertColor: #eeeeee;
-	--OLSKCodeColor: hsl(0, 0%, 20%);
+	
+	--OLSKCodeBackground: #eeeeee;
+	--OLSKCodeForeground: #333;
+
+	--OLSKStickyHeaderTop: 0;
 }
 
 /* OLSKCommonEdge */
@@ -84,7 +88,7 @@
 .OLSKStickyHeader {
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0;
+	top: var(--OLSKStickyHeaderTop);
 }
 
 /* OLSKViewport */
@@ -322,15 +326,15 @@
 	flex-grow: 1;
 }
 
-.OLSKMasterListBody .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: var(--OLSKMasterListItemSelectedColorDefault);
+.OLSKMasterListBody .OLSKCollectionItemLocus {
+	background: var(--OLSKCollectionItemsLocusColorDefault);
 }
 
 @media screen and (min-width: 760px) {
 
-.OLSKMasterListFocused .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: var(--OLSKMasterListItemSelectedColorActive);
-	color: var(--OLSKMasterListItemSelectedColorActiveInverse);
+.OLSKMasterListFocused .OLSKCollectionItemLocus {
+	background: var(--OLSKCollectionItemsLocusColorActive);
+	color: var(--OLSKCollectionItemsLocusColorActiveInverse);
 }
 
 }
@@ -425,7 +429,7 @@
 
 .OLSKDecor input[type="text"], .OLSKDecor textarea, .OLSKDecorInput {	
 	background: var(--OLSKCommonBackground) !important;
-	border-color: var(--OLSKCommonBorderColor) !important;
+	border-color: var(--OLSKCommonEdgeColor) !important;
 
 	/* OLSKMobileSafariRemoveDefaultInputStyle */
 	-webkit-appearance: none;
@@ -433,7 +437,7 @@
 	appearance: none;
 }
 
-.OLSKDecor input, .OLSKDecor textarea {	
+.OLSKDecor input, .OLSKDecor textarea, .OLSKDecorInput {	
 	border: var(--OLSKCommonEdgeBorder);
 
 	color: var(--OLSKCommonForeground);
@@ -444,7 +448,7 @@
 }
 
 a.OLSKDecorPress {
-	color: var(--OLSKCommonForeground);
+	color: black;
 	text-decoration: none;
 }
 
@@ -470,8 +474,8 @@ a.OLSKDecorPress {
 	padding: var(--OLSKSharedPadding);
 	border-radius: var(--OLSKBorderRadius);
 
-	background: var(--OLSKAlertColor);
-	color: var(--OLSKCodeColor);
+	background: var(--OLSKCodeBackground);
+	color: var(--OLSKCodeForeground);
 }
 
 /* OLSKDecorNotice */
@@ -500,7 +504,10 @@ a.OLSKDecorPress {
 /* OLSKCommonAppring */
 
 .OLSKCommonAppring {
+	display: block;
+
 	margin: 40px 0;
+	
 	text-align: center;
 }
 
@@ -709,4 +716,31 @@ a.OLSKDecorPress {
 
 .OLSKDecorSilentLink img {
  border: none !important;
+}
+
+/* OLSKDecorGlossary */
+
+.OLSKDecorGlossary {
+	padding: 30px;
+
+	margin: 50px 0;
+
+	background: hsl(0, 0%, 96%);
+	color: hsl(0, 0%, 20%);
+}
+
+.OLSKDecorGlossary :first-child {
+	margin-top: 0;
+}
+
+.OLSKDecorGlossary :last-child {
+	margin-bottom: 0;
+}
+
+.OLSKDecorGlossary dt {
+	font-weight: bold;
+}
+
+.OLSKDecorGlossary dd {
+	margin: 10px 0;
 }
