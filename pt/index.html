@@ -15,15 +15,16 @@
 			return {"OLSKSharedPageCurrentLanguage":"pt"}[inputData];
 		};
 	</script>
-	<link rel="apple-touch-icon" href="https://static.rosano.ca/kommit/touch.png">
+	<meta property="og:image" content="https://static.rosano.ca/kommit/touch.png" />
+	<link rel="apple-touch-icon" href="https://static.rosano.ca/kommit/touch.png" />
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="white"/>
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/OLSKDecor/ui-style.css">
-	<script src="/_shared/__external/OLSKBanner/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="/_shared/common/ui-style.css">
 	<link rel="stylesheet" type="text/css" href="/open-vitrine/ui-style.css">
 	<script defer data-domain="kommit.rosano.ca" src="https://stats.rosano.ca/js/script.js"></script>
+	<script src="https://olsk.rosano.ca/OLSKBanner/master/main.js"></script>
 </head>
 
 <body>
@@ -222,32 +223,39 @@
 
 <a class="KOMVitrineGuideButton OLSKDecorPress OLSKDecorPressCall" href="/guide">Ler o guia</a>
 
-<h1 class="KOMVitrineGazetteHeading">Informar-se sobre o meu próximo projecto</h1>
+<div class="ROCOGazette OLSKDecorModule">
+
+<h2 class="ROCOGazetteHeading">Informar-se sobre o meu próximo projecto</h2>
+
 <p class="OLSKFollow">Receber atualizações no <a class="OLSKFollowTwitter" target="_blank" href="https://twitter.com/rosano">Twitter</a> ou no <a class="OLSKFollowMastodon" target="_blank" href="https://merveilles.town/@rosano">Mastodon</a>.</p>
 
-<form class="OLSKGazette OLSKDecorBigForm" method="post" action="https://buttondown.email/api/emails/embed-subscribe/rosano" target="_blank">
+
+<form class="ROCOBulletin OLSKDecorBigForm" method="post" action="https://buttondown.email/api/emails/embed-subscribe/rosano" target="_blank">
 
 	<p>
-		<input class="OLSKGazetteAddressField" type="email" name="email" placeholder="you@example.com" />
+		<input class="ROCOBulletinAddressField" type="email" name="email" placeholder="you@example.com" />
 	</p>
 
-	<input class="OLSKGazetteProjectField" type="hidden" name="metadata__project" value="RP_004"/>
+	<input class="ROCOBulletinProjectField" type="hidden" name="metadata__project" value="RP_004"/>
 	<input type="hidden" value="1" name="embed" />
 
 	<p>
-		<input class="OLSKGazetteSubmitButton OLSKDecorPressCall" type="submit" value="Assinar à lista de distribuição" />
+		<input class="ROCOBulletinSubmitButton OLSKDecorPressCall" type="submit" value="Assinar à lista de distribuição" />
 	</p>
 	
 </form>
 
 
-<h1 class="KOMVitrineJarHeading">❤️</h1>
-<form class="OLSKJar OLSKDecorBigForm">
-	<p class="OLSKJarBlurb">Se você está gostando disso, considere contribuir para meu Open Collective para me ajudar a continuar fazendo projetos públicos, acessíveis de graça e de código aberto.</p>
+</div>
 
-	<p>
-		<a class="OLSKJarContributeButton OLSKDecorPress OLSKDecorPressCall" href="https://opencollective.com/rosano/contribute" target="_blank">Contribuir no Open Collective</a>
-	</p>
+
+<form class="OLSKJar OLSKDecorModule">
+
+<p class="OLSKJarBlurb">Se você está gostando disso, considere contribuir para meu Open Collective para me ajudar a continuar fazendo projetos públicos, acessíveis de graça e de código aberto.</p>
+
+<p>
+	<a class="OLSKJarContributeButton OLSKDecorPress" href="https://opencollective.com/rosano/contribute" target="_blank">❤️ Contribuir no Open Collective</a>
+</p>
 	
 </form>
 
