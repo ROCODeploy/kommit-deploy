@@ -410,6 +410,15 @@ body {
 	padding-left: 30px;
 }
 
+.OLSKDecor img {
+	max-width: calc(100% - var(--OLSKDecorPadding) * 2);
+
+	border: var(--OLSKDecorBorder);
+	border-width: var(--OLSKDecorPadding);
+	border-color: var(--OLSKDecorForegroundLight);
+	border-radius: var(--OLSKBorderRadius);
+}
+
 .OLSKDecor blockquote {
 	margin-left: 0;
 	padding-left: var(--OLSKDecorPadding);
@@ -437,6 +446,7 @@ body {
 .OLSKDecor table tr td {
 	padding: var(--OLSKSharedPadding);
 	border-top: var(--OLSKDecorBorder);
+	border-color: var(--OLSKDecorForegroundLight);
 }
 
 /* form */
@@ -697,7 +707,7 @@ a.OLSKDecorPress {
 	--OLSKCommonVideoHigh: 1334;
 	
 	padding-top: calc(((var(--OLSKCommonVideoHigh) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth)) / (var(--OLSKCommonVideoWide) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth))) * 100.00%);
-	border: calc(var(--OLSKCommonVideoBorderWidth) * 1px) var(--OLSKDecorBorderColor) solid;
+	border: calc(var(--OLSKCommonVideoBorderWidth) * 1px) var(--OLSKDecorForegroundLight) solid;
 	border-radius: var(--OLSKBorderRadius);
 
   position: relative;
@@ -782,11 +792,6 @@ a.OLSKDecorPress {
 
 .OLSKDecorX * {
  max-width: 100%;
-}
-
-.OLSKDecorX img {
-    border: 5px var(--OLSKCommonInteractiveFill) solid;
-    border-radius: var(--OLSKBorderRadius);
 }
 
 /* OLSKDecorSilentLink */
