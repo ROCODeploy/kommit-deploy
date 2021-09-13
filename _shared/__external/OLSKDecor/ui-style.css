@@ -410,7 +410,7 @@ body {
 	padding-left: 30px;
 }
 
-.OLSKDecor img {
+.OLSKDecor img:not(* img) {
 	max-width: calc(100% - var(--OLSKDecorPadding) * 2);
 
 	border: var(--OLSKDecorBorder);
@@ -703,8 +703,8 @@ a.OLSKDecorPress {
 
 .OLSKCommonVideoListItem {
 	--OLSKCommonVideoBorderWidth: 13;
-	--OLSKCommonVideoWide: 750;
-	--OLSKCommonVideoHigh: 1334;
+	--OLSKCommonVideoWide: 1440;
+	--OLSKCommonVideoHigh: 800;
 	
 	padding-top: calc(((var(--OLSKCommonVideoHigh) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth)) / (var(--OLSKCommonVideoWide) + var(--OLSKCommonVideoBorderWidth) * var(--OLSKCommonVideoBorderWidth))) * 100.00%);
 	border: calc(var(--OLSKCommonVideoBorderWidth) * 1px) var(--OLSKDecorForegroundLight) solid;
@@ -723,6 +723,16 @@ a.OLSKDecorPress {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.OLSKCommonVideoListItemMobile {
+	--OLSKCommonVideoWide: 750;
+	--OLSKCommonVideoHigh: 1334;
+}
+
+.OLSKCommonVideoListItemSquare {
+	--OLSKCommonVideoWide: 730;
+	--OLSKCommonVideoHigh: 540;
 }
 
 /* OLSKDecorFormBlend */
